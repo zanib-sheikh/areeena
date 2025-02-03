@@ -1,0 +1,81 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+/* Add slick-carousel styles */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+
+/* Parallelogram Shape with Gradient and Opacity */
+.clip-parallelogram-mirror {
+  background: linear-gradient(to bottom, #012C0C, #3C6D0000); /* Green to transparent */
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 85%); /* Creates mirrored parallelogram shape */
+  position: absolute;
+  top: 0; /* Start at the top of the screen */
+  right: 0; /* Start at the left of the screen */
+  
+  width: 50%; /* Full width */
+  height: 100%; /* Full height */
+  z-index: 0; /* Places it above the background but below content like navbar or buttons */
+  /* Adding inner shadow */
+  box-shadow: inset 5px 8px  20px 15px  rgba(0, 0, 0, 0.5); /* Inner shadow */
+  -webkit-mask-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Ensure clipping is not hiding shadow */
+  mask-image: linear-gradient(bottom, rgba(0,0,0,0.5), rgba(0,0,0,0)); /* Same for other browsers */
+}
+
+
+body[dir='rtl'] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Base Styling for All Tiers */
+.tier-card {
+  background-color: rgb(44, 45, 45);
+  color: white;
+  text-align: center;
+  padding: 40px;
+  width: 340px;
+  height: 320px;
+  
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden; /* Ensures the content stays within the rounded corners */
+}
+
+.tier-card:hover {
+  transform: scale(1.05);
+}
+
+/* Bronze Tier - Left Slanting Parallelogram */
+.bronze {
+  clip-path: polygon(0% 15%, 90% 0%, 100% 100%, 15% 100%);
+  border-radius: 120px 110px 30px 100px; /* Different radii for each side */
+}
+
+/* Silver Tier - Right Slanting Parallelogram */
+.silver {
+  clip-path: polygon(10% 0%, 100% 15%, 90% 100%, 0% 100%);
+  border-radius: 110px 120px 90px 40px; /* Different radii for each side */
+}
+
+/* Gold Tier - Isosceles Trapezium */
+.gold {
+  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+  border-radius: 45px 45px 80px 80px;
+}
+
+
+
+* {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  
+  
+html {
+    scroll-behavior: smooth;
+  }
+  
+
